@@ -1,8 +1,18 @@
+import sys
 import requests
 from pprint import pprint
+import hello_helper
 
-r = requests.get('https://ws-api.iextrading.com/1.0/tops', auth=('user', 'pass'))
+
+url = 'https://ws-api.iextrading.com/1.0'
+batch = '/stock/aapl/chart'
+
+#comment
+r = requests.get(url+batch, auth=('user', 'pass')) 
 r.status_code
 r.headers['content-type']
 
-pprint(r.json())
+data = r.json()
+a = hello_helper.class1(r[0]['high'], 
+
+print(data[0]['low'])
